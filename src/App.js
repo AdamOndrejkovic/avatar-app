@@ -1,23 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import AddAvatar from "./components/AddAvatar/AddAvatar";
+import {useContext, useState} from "react";
+import AvatarsList from "./components/Avatars/AvatarsList";
+import ActiveAvatar from "./store/active-avatar";
 
 function App() {
+  const act = useContext(ActiveAvatar);
+  const [avatars, setAvatars] = useState([{
+      id: '1',
+      name: 'Penguin',
+      filePath: 'avatars/pinguin.png',
+  },
+      {
+          id: '2',
+          name: 'Smiley',
+          filePath: 'avatars/smiley.png',
+      }]);
+
+  const addAvatarHandler = avatar => {
+      setAvatars((prevAvatars) => {
+         return [avatar, ...prevAvatars]
+      });
+  }
+
+  const deleteAvatarHandler = avatarId => {
+      setAvatars(prevAvatars => {
+          return prevAvatars.filter(avatar => avatar.id !== avatarId);
+      });
+  };
+
+  const editAvatarHandler = avatarData => {
+
+  };
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <AddAvatar onAddAvatar={addAvatarHandler}/>
+        <AvatarsList items={avatars} onDelete={deleteAvatarHandler} onEdit={editAvatarHandler}/>
     </div>
   );
 }

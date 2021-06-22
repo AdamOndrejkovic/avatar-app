@@ -1,0 +1,7 @@
+.avatars-list {
+    margin: auto;
+    background-image: url("/src/resources/images/bg.png");
+    width: 70%;
+    border-radius: 25px;
+    padding: 15px 10px;
+}

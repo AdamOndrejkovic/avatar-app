@@ -1,0 +1,57 @@
+.avatar-item {
+    width: 80%;
+    margin: 10px auto;
+    background:rgba(0,0,0,0.5);
+    border-radius: 25px;
+    position: relative;
+    list-style-type: none;
+    min-height: 80px;
+}
+
+.avatar-img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    padding: 3px 0px 3px 15px;
+}
+
+.avatar-name {
+    position: absolute;
+    top: 35%;
+    right: 45%;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.avatar-active {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: lightgreen;
+    font-weight: bold;
+}
+
+.delete-btn {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.edit-btn {
+    position: absolute;
+    bottom: 5%;
+    right: 10%;
+}
+
+.activate-btn {
+    position: absolute;
+    bottom: 5%;
+    right: 15%;
+}
+
+.delete-btn:hover, .edit-btn:hover, .activate-btn:hover {
+    background-color: bisque;
+    padding: 2px 5px;
+    border-radius: 15px;
+}
+
